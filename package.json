@@ -1,7 +1,7 @@
 {
   "name": "webdriverioprojecttask3-task4",
   "version": "1.0.0",
-  "description": "\"Automation with webdriver\"",
+  "description": "Automation with webdriver",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@wdio/cli": "^8.38.0",
+    "@wdio/devtools-service": "^8.38.0",
     "@wdio/local-runner": "^8.38.0",
     "@wdio/mocha-framework": "^8.38.0",
     "@wdio/spec-reporter": "^8.38.0"
