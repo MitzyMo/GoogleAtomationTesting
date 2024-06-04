@@ -9,6 +9,18 @@
     "expectedOperatingSystem": "Free: Debian, CentOS, CoreOS, Ubuntu or BYOL (Bring Your Own License)",
     "expectedProvisioningModel": "Regular",
     "expectedRegion": "Oregon (us-west1)",
-    "expectedCommittedUsage": "1 year"
+    "expectedCommittedUsage": "1 year",
+    "partialMatches": [
+      "Google Cloud Platform Pricing",
+      "Google Platform Pricing",
+      "Google Cloud Pricing",
+      "Cloud Platform Pricing Calculator",
+      "Platform Pricing Calculator"
+    ],
+    "exactMatches": [
+      "Google Cloud Pricing Calculator",
+      "Google Platform Pricing Calculator",
+      "Google Cloud Pricing Calculator"
+    ]
   }
 }

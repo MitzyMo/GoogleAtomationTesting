@@ -6,11 +6,11 @@ class MainPage {
     await browser.url('/');
   }
 
-  async searchForCalculator() {
+  async searchForCalculator(keyword) {
     await this.searchIcon.waitForClickable();
     await this.searchIcon.click();
     await this.searchInput.waitForDisplayed();
-    await this.searchInput.setValue('Google Cloud Platform Pricing Calculator');
+    await this.searchInput.setValue(keyword);
     await browser.keys('Enter');
   }
 }
