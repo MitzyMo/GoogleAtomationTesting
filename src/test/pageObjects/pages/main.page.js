@@ -3,7 +3,7 @@ class MainPage {
   get searchInput() { return $('input[aria-label="Search"]'); }
 
   async open() {
-    await browser.url('https://cloud.google.com/');
+    await browser.url('/');
   }
 
   async searchForCalculator() {
