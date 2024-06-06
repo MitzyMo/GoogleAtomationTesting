@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//li[@data-value=\"2\"][.//span[@jsname=\"K4r5Ff\" and text()=\"2x375 GB\"]]"
-}

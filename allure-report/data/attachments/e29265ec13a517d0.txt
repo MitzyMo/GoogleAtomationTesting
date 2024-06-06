@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//button[@aria-label=\"Open Share Estimate dialog\"]"
-}

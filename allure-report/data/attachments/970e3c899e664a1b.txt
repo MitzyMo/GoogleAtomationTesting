@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//li[@data-value=\"nvidia-tesla-v100\"]"
-}

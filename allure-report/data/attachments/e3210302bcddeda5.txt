@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//li[@data-value=\"n1-standard-8\"]"
-}

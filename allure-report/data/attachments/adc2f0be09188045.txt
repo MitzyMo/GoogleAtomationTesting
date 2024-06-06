@@ -1,3 +1,0 @@
-{
-  "text": "Google Platform Pricing Calculator"
-}

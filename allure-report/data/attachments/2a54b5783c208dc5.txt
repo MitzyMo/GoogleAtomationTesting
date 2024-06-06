@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "div.YSM5S[jsname=\"Ohx1pb\"]"
-}

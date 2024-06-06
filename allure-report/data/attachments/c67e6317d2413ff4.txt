@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//div[@jscontroller=\"GPHYJd\"][.//span[@jscontroller=\"liGIGc\" and text()=\"Region\"]]"
-}
