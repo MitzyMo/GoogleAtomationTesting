@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//div[@role=\"combobox\"][.//span[@class=\"VfPpkd-t08AT-Bz112c\"] and .//span[@jscontroller=\"liGIGc\" and text()=\"Machine Family\"]]"
+}

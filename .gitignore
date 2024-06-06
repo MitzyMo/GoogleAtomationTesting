@@ -1,3 +1,6 @@
 node_modules
 allure-results
+allure-report
 .env
+.env.dev
+.env.qa

@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "ul.VfPpkd-rymPhb > li[data-value=\"free-debian-centos-coreos-ubuntu-or-byol-bring-your-own-license\"]"
+}

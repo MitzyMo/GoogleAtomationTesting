@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": ".gN5n4.MyvX5d.D0aEmf"
+}

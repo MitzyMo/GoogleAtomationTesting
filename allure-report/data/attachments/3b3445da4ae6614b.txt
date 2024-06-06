@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//span[contains(@class, \"Z7Pe2d\") and contains(@class, \"g5Ano\")][span[1][text()=\"Committed use discount options\"] and span[2][text()=\"1 year\"]]"
+}
