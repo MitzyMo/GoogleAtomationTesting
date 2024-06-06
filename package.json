@@ -4,8 +4,9 @@
   "description": "Automation with webdriver",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "wdio": "wdio run ./src/config/wdio.conf.js"
+    "test:dev": "TEST_ENV=dev npx wdio run ./src/config/wdio.conf.js",
+    "test:qa": "TEST_ENV=qa npx wdio run ./src/config/wdio.conf.js",
+    "report": "allure generate allure-results --clean && allure open"
   },
   "repository": {
     "type": "git",

@@ -147,6 +147,7 @@ class ComputeEngineFormPage {
     let secondSpanText = await parentSpan.$('span:nth-child(2)').getText();
     await expect(firstSpanText).toEqual(selectedService);
     await expect(secondSpanText).toEqual(expectedValue);
+    console.log('key: ',firstSpanText,' - ','Value: ',secondSpanText);
   }
 }
 
