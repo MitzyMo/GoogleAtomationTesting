@@ -1,6 +1,5 @@
 ## WebdriverIOProjectTask3
 
-
 # Automate the following script: 
 1. Open https://cloud.google.com/.
 2. Click on the icon at the top of the portal page and enter "Google Cloud Platform Pricing Calculator" into the search field.
@@ -63,8 +62,13 @@ Automate the following script:
    * Committed usage: 1 Year
 Other options leave in the default state.
 7. Click 'Add to Estimate'.
-8. Check the price is calculated in the right section of the calculator. There is a line “Total Estimated Cost: USD ${amount} per 1 month” 
-9. Click "Share" to see Total estimated cost.
+8. Click "Share" to see Total estimated cost.
+9. Check the price is calculated in the right section of the calculator. There is a line “Total Estimated Cost: USD ${amount} per 1 month” 
 10. Click "Open estimate summary" to see Cost Estimate Summary, will be opened in separate tab browser.
 11. Verify that the 'Cost Estimate Summary' matches with filled values in Step 6. 
 
+## Run Test
+
+1. npm run test:qa //runs the script requested to be automated
+2. npm run test:prod // runs a small smoke test and integration test
+3. npm run report //runs and opens allure reports
