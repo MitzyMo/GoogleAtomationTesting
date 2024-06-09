@@ -69,6 +69,6 @@ Other options leave in the default state.
 
 ## Run Test
 
-1. npm run test:dev
-2. npm run test:qa
-3. npm run report
+1. npm run test:qa //runs the script requested to be automated
+2. npm run test:prod // runs a small smoke test and integration test
+3. npm run report //runs and opens allure reports

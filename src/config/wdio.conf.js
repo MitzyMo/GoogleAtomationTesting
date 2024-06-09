@@ -1,9 +1,18 @@
 const dotenv = require('dotenv');
+const path = require('path');
+
 const result = dotenv.config({ path: `.env.${process.env.TEST_ENV}` });
 
 if (result.error) {
   throw result.error;
 }
+
+const testSpecs = {
+  qa: ['../test/specs/e2e/**/*.js'],
+  prod: ['../test/specs/integration/**/*.js', '../test/specs/smoke/**/*.js']
+};
+
+const specsToRun = testSpecs[process.env.TEST_ENV];
 
 exports.config = {
   //
@@ -27,7 +36,7 @@ exports.config = {
   // The path of the spec files will be resolved relative from the directory of
   // of the config file unless it's absolute.
   //
-  specs: ["../test/specs/**/*.js"],
+  specs: specsToRun,
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'

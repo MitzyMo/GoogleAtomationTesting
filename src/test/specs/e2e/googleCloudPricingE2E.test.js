@@ -1,30 +1,28 @@
-const MainPage = require("../pageObjects/pages/main.page.js");
-const SearchPage = require("../pageObjects/pages/search.page.js");
-const CalculatorPage = require("../pageObjects/pages/calculator.page.js");
-const ComputeEngineFormPage = require("../pageObjects/pages/computeEngineForm.page.js");
+const MainPage = require("../../pageObjects/pages/main.page.js");
+const SearchPage = require("../../pageObjects/pages/search.page.js");
+const CalculatorPage = require("../../pageObjects/pages/calculator.page.js");
+const ComputeEngineFormPage = require("../../pageObjects/pages/computeEngineForm.page.js");
 const { addAttachment } = require("@wdio/allure-reporter");
 const fs = require("fs");
 const path = require("path");
 
-const testDataPath = path.resolve(__dirname, "../../data/testData.json");
-let testData = JSON.parse(fs.readFileSync(testDataPath, "utf8"));
-console.log("Loaded Test Data: ", testData);
-console.log("Expected Machine Type: ", testData.expectedMachineType); // Add this line to log the specific property
+const testDataPath = path.resolve(__dirname, `../../data/testData_${process.env.TEST_ENV}.json`);
+let testData = JSON.parse(fs.readFileSync(testDataPath, 'utf8'));
 
-// Happy Path
-/* describe("View Compute Engine Product Pricing complete flow", () => {
-  it("Open", async () => {
+// End-to-End (E2E)
+describe("Compute Engine Estimate Price Flow", () => {
+  it("Open Main Page and Search for Calculator", async () => {
     await MainPage.open();
     await MainPage.searchForCalculator(testData.calculatorSearchKeyword);
   });
-  it("Search Result", async () => {
+  it("Click on Calculator Link from Search Results", async () => {
     await SearchPage.clickCalculatorLink();
   });
-  it("Calculate page", async () => {
+  it("Add Estimate and Select Compute Engine", async () => {
     await await CalculatorPage.clickAddEstimate();
     await CalculatorPage.selectComputeEngine();
   });
-  it("Fill form", async () => {
+  it("Fill Compute Engine Form", async () => {
     await ComputeEngineFormPage.setInstances();
     await ComputeEngineFormPage.selectOperatingSystem();
     await ComputeEngineFormPage.selectProvisioningModel();
@@ -37,18 +35,22 @@ console.log("Expected Machine Type: ", testData.expectedMachineType); // Add thi
     await ComputeEngineFormPage.selectCommittedUsage();
     await browser.pause(3000);
   });
-  it("View Price and click share", async () => {
+  it("View Estimated Cost and Click Share", async () => {
     const estimatedCost = await ComputeEngineFormPage.getEstimatedCostText();
     console.log("Estimated Cost:", estimatedCost);
-    console.log("Share Estimate Dialog should be open now");
+    const regex = /^\$\d{1,3}(,\d{3})*(\.\d{2})?$/; // regex pattern for currency
+    expect(estimatedCost).toMatch(regex);
   });
   it("Review Total estimated cost and go to Summary", async () => {
     await ComputeEngineFormPage.shareEstimate();
+    const totalEstimatedCostText = await ComputeEngineFormPage.getTotalEstimatedCostText();
+    console.log("Estimated Cost:", totalEstimatedCostText);
+    const regex = /^\$\d{1,3}(,\d{3})*(\.\d{2})? \/ month$/;  // regex pattern for currency
+    expect(totalEstimatedCostText).toMatch(regex);
     await ComputeEngineFormPage.clickOpenEstimateSummary();
-    await ComputeEngineFormPage.getTotalEstimatedCostText();
     await ComputeEngineFormPage.switchToEstimateSummary();
   });
-  it("Verify data new screen", async () => {
+  it("Verify Summary Details", async () => {
     await console.log("Testing: ", testData.expectedMachineType);
     await ComputeEngineFormPage.verifySummaryDetails(
       "Service type",
@@ -107,39 +109,4 @@ console.log("Expected Machine Type: ", testData.expectedMachineType); // Add thi
       );
     }
   });
-});
- */
-//Smoke Testing
-describe("Verify that the search engine performs the query by varying the original text", () => {
-  // Test for the original keyword
-  it("Search with original keyword", async () => {
-    await MainPage.open();
-    await MainPage.searchForCalculator(testData.calculatorSearchKeyword);
-    await SearchPage.clickCalculatorLink();
-  });
-  // Tests for partial matches
-/*   testData.partialMatches.forEach((keyword) => {
-    it(`Search with partial match: ${keyword}`, async () => {
-      await MainPage.open();
-      await MainPage.searchForCalculator(keyword);
-      await SearchPage.clickCalculatorLink();
-    });
-  });
-  //Screenshots
-  afterEach(async function () {
-    if (this.currentTest.state === "failed") {
-      console.log(this.currentTest.state);
-      // Generate a unique filename with date and time
-      const fileName = `00.screenshot_${new Date().toISOString()}.png`;
-      // Take a screenshot and save it with the filename
-      await browser.saveScreenshot(`./src/test/specs/Screenshots/${fileName}`);
-      // Attach the screenshot to the Allure report
-      await addAttachment(
-        fileName,
-        await browser.takeScreenshot(),
-        "image/png"
-      );
-    }
-  });
-   */
 });
